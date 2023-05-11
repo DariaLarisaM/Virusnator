@@ -1,0 +1,72 @@
+int primit=48;
+int stanga1=2;
+int stanga2=3;
+int dreapta3=4;
+int dreapta4=5;
+int pompa=7;
+void setup() {
+Serial.begin(9600);
+pinMode(stanga1,OUTPUT);
+pinMode(stanga2,OUTPUT);
+pinMode(dreapta3,OUTPUT);
+pinMode(dreapta4,OUTPUT);
+pinMode(pompa,OUTPUT);
+digitalWrite(pompa,LOW);
+}
+
+void loop() {
+  if (Serial.available())
+  {
+    primit=Serial.read();
+    Serial.println(primit);
+  }
+  if (primit==49)
+  {
+    digitalWrite(stanga1,HIGH);
+    digitalWrite(stanga2,LOW);
+    digitalWrite(dreapta3,HIGH);
+    digitalWrite(dreapta4,LOW);
+    digitalWrite(pompa,LOW);
+  }
+  if (primit==50)
+  {
+    digitalWrite(stanga1,LOW);
+    digitalWrite(stanga2,LOW);
+    digitalWrite(dreapta3,HIGH);
+    digitalWrite(dreapta4,LOW);
+    digitalWrite(pompa,LOW);
+  }
+  if (primit==51)
+  {
+    digitalWrite(stanga1,HIGH);
+    digitalWrite(stanga2,LOW);
+    digitalWrite(dreapta3,LOW);
+    digitalWrite(dreapta4,LOW);
+    digitalWrite(pompa,LOW);
+  }
+  if (primit==52)
+  {
+    digitalWrite(stanga1,LOW);
+    digitalWrite(stanga2,HIGH);
+    digitalWrite(dreapta3,LOW);
+    digitalWrite(dreapta4,HIGH);
+    digitalWrite(pompa,LOW);
+  }
+  if (primit==53)
+  {
+    digitalWrite(stanga1,LOW);
+    digitalWrite(stanga2,LOW);
+    digitalWrite(dreapta3,LOW);
+    digitalWrite(dreapta4,LOW);
+    digitalWrite(pompa,HIGH);
+  } 
+  if (primit==48)
+  {
+    digitalWrite(stanga1,LOW);
+    digitalWrite(stanga2,LOW);
+    digitalWrite(dreapta3,LOW);
+    digitalWrite(dreapta4,LOW);
+    digitalWrite(pompa,LOW);
+  }
+  }
+  
